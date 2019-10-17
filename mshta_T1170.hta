@@ -1,0 +1,9 @@
+<html><head><HTA:APPLICATION WINDOWSTATE="minimize" ><SCRIPT Language="VBScript">
+Set objFSO=CreateObject("Scripting.FileSystemObject")
+
+' How to write file
+outFile="c:\temp\T1170.txt"
+Set objFile = objFSO.CreateTextFile(outFile,True)
+objFile.Write "MSHTA executed successfully" & vbCrLf
+objFile.Close
+</SCRIPT></head></html>
