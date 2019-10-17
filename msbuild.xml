@@ -1,0 +1,22 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="Hello">
+    <SharpLauncher >
+    </SharpLauncher>
+  </Target>
+  <UsingTask
+    TaskName="SharpLauncher"
+    TaskFactory="CodeTaskFactory"
+    AssemblyFile="C:\Windows\Microsoft.Net\Framework\v4.0.30319\Microsoft.Build.Tasks.v4.0.dll" >
+    <ParameterGroup/>
+    <Task>
+      <Using Namespace="System" />
+      <Using Namespace="System.Reflection" />
+       
+      <Code Type="Fragment" Language="cs">
+         <![CDATA[
+            var r = new ActiveXObject("WScript.Shell").Run("cmd.exe /c echo 1 > c:\\temp\\t1127_msbuild.txt",0);
+        ]]>
+      </Code>
+    </Task>
+  </UsingTask>
+</Project>
