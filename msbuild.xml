@@ -1,0 +1,24 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="Hello">
+    <SharpLauncher >
+    </SharpLauncher>
+  </Target>
+  <UsingTask
+    TaskName="SharpLauncher"
+    TaskFactory="CodeTaskFactory"
+    AssemblyFile="C:\Windows\Microsoft.Net\Framework\v4.0.30319\Microsoft.Build.Tasks.v4.0.dll" >
+    <ParameterGroup/>
+    <Task>
+      <Using Namespace="System" />
+      <Using Namespace="System.Reflection" />
+       
+      <Code Type="Fragment" Language="cs">
+         <![CDATA[
+            StreamWriter sw = new StreamWriter("C:\\temp\\T1127-MSBUILD.txt");
+			sw.WriteLine("Hello World!!");
+			sw.Close();
+        ]]>
+      </Code>
+    </Task>
+  </UsingTask>
+</Project>
